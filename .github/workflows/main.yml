@@ -10,6 +10,6 @@ jobs:
         with:
           python-version: "3.12"
       - name: install dependencies
-        run: pip install -r requirements.txt
+        run: pip install -r lab6-fastapi/requirements.txt
       - uses: actions/setup-python@v4
       - run: python -m pytest tests/test_hello.py
