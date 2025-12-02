@@ -1,4 +1,4 @@
-name: CI + Docker
+name: pytest
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-python@v4
-      - run: pytest tests/test_hello.py
+      - run: python -m pytest tests/test_hello.py
