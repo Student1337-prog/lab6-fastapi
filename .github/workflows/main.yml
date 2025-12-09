@@ -27,7 +27,11 @@ jobs:
         run: |
           export PYTHONPATH=.
           pytest . -vv
-      
+      - name: Build Docker image
+        run: |
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/lab6-fastapi
+          docker build -t $IMAGE:latest .
+
       - name: Tag image with commit ID
         run: |
           IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/lab6-fastapi
