@@ -27,3 +27,8 @@ jobs:
         run: |
           export PYTHONPATH=.
           pytest . -vv
+      
+      - name: Tag image with commit ID
+        run: |
+          IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/myapp
+          docker tag $IMAGE:latest $IMAGE:${{ github.sha }}
